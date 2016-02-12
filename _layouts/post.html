@@ -1,0 +1,21 @@
+---
+layout: blog-home
+---
+<article class="post">
+    <h2 class="title">{{ page.title }}</h2>
+    <div class="meta">
+        <ul class="meta-list list-inline">                                       
+        	<li class="post-time post_date date updated">{{ page.date | date: '%B %d, %Y' }}</li>
+        	<li class="post-author"> by <a href="#">{{ page.author }}</a></li>
+    	</ul><!--//meta-list-->                           	
+    </div><!--meta-->
+
+    <div class="content">
+        <p>{{ content }}</p>
+    </div>
+
+<hr />
+
+{% include partials/disqus-comments.html %}
+
+</article><!--//post-->

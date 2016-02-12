@@ -1,0 +1,92 @@
+---
+layout: blog-home
+---
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+
+  {% include head.html %}
+
+<body class="blog-page">    
+    <div class="wrapper">
+
+    {% include header.html %}
+        
+        <!-- ******BLOG LIST****** --> 
+        <div class="blog container">
+            <div class="row">
+                <div id="blog-list" class="blog-list section col-md-8 col-sm-8 col-xs-12">
+
+                    {{ content }}
+
+<!--
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>--><!--//pagination-->
+                </div><!--//blog-list-->
+                
+                <aside id="blog-sidebar" class="blog-sidebar col-md-3 col-sm-4 col-xs-12 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
+                    <!--
+                    <section class="widget search">
+                        <h3 class="sr-only title">Search Blog</h3>
+                        <form class="search-blog-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search blog...">
+                            </div>
+                            <button type="submit" class="btn btn-cta btn-cta-primary"><i class="fa fa-search"></i></button>
+                        </form>
+                    </section>
+                    -->
+                    <!--//search-->
+                    <section class="widget social">
+                        <h3 class="title">Get Connected</h3>
+                        <ul class="list-inline">
+                            <li><a href="https://twitter.com/mapzai"><i class="fa fa-twitter-square"></i></a></li>
+                        </ul>
+                    </section><!--//widget-->
+                    <!--
+                    <section class="widget categories">
+                        <h3 class="title">Categories</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Stories</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Business</a></li>
+                        </ul>
+                    </section>
+                    -->
+                    <!--//widget-->
+
+                    <section class="widget recent-posts">
+                        <h3 class="title">Recent Posts</h3>
+                        <ul class="list-unstyled">
+
+                        {% for post in site.posts %}
+                            <li>
+                                <a href="{{post.url}}">{{post.title}}</a>
+                                <br />
+                                <span class="date">{{post.date | date: '%-d %B, %Y'}}</span>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </section><!--//widget-->
+                </aside><!--//blog-side-bar-->               
+            </div><!--//row-->
+        </div><!--//blog-->
+    </div><!--//wrapper-->
+    
+    {% include footer.html %}
+    
+   {% include partials/modals.html %}
+ 
+    {% include partials/javascript.html %}
+
+</body>
+</html>
